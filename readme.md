@@ -40,3 +40,11 @@ new Route({
     <%}%>
 </ul>
 ```
+### observer.js
+一个简单的发布订阅系统，支持在同一个页面的不同文件下使用，如下：
+```
+// hotelList/view.js
+Observer("hotelList").subscribe("render", () => {});
+// hotelList/controller.js
+Observer("hotelList").publish("render");
+```
